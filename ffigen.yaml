@@ -1,0 +1,23 @@
+# ffigen:
+name: LuaBindings
+output: lib/lua_bindings.dart
+
+headers:
+  # Add path to your lua source directory here
+  entry-points:
+    # - "/lua-5.4.8/src/lua.h"
+    # - "/lua-5.4.8/src/lauxlib.h"
+    # - "/lua-5.4.8/src/lualib.h"
+
+  include-directives:
+    - "**lua.h"
+    - "**lauxlib.h"
+    - "**lualib.h"
+
+compiler-opts:
+  - "-Isrc/lua" # path to headers
+
+functions:
+  include:
+    - "lua_.*"
+    - "luaL_.*"
