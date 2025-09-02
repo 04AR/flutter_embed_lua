@@ -2,8 +2,8 @@ name: flutter_embed_lua
 description: "A Lua binding plugin for Flutter, enabling seamless integration of Lua scripting capabilities within your Flutter applications."
 version: 0.0.1
 homepage:
-repository: https://github.com/04AR/flutter_lua
-issue_tracker: https://github.com/04AR/flutter_lua/issues
+repository: https://github.com/04AR/flutter_embed_lua
+issue_tracker: https://github.com/04AR/flutter_embed_lua/issues
 
 environment:
   sdk: ^3.9.0
