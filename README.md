@@ -1,5 +1,9 @@
 # flutter_embed_lua
 
+<div>
+  <a href=https://pub.dev/packages/flutter_embed_lua target="_blank"><img src=https://img.shields.io/badge/Pub%20Package-blue.svg?logo=flutter height=22px></a>
+</div>
+
 🚀 **flutter_embed_lua** is a Flutter plugin that embeds a full **Lua runtime** inside your Flutter application. It allows you to **extend your app functionality at runtime** by running Lua scripts, defining custom functions, and bridging Lua with Dart.
 
 ---
