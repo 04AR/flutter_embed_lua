@@ -47,7 +47,8 @@ class LuaRuntime {
     } else if (Platform.isWindows) {
       return ffi.DynamicLibrary.open("lua54.dll");
     } else if (Platform.isMacOS) {
-      return ffi.DynamicLibrary.open("liblua.dylib");
+      //build action https://github.com/aa2013/mac-lua-lib
+      return ffi.DynamicLibrary.open("liblua.5.4.dylib");
     }
 
     return ffi.DynamicLibrary.process();
