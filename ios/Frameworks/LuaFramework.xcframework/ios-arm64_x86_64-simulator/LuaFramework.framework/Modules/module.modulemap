@@ -1,0 +1,6 @@
+framework module LuaFramework {
+  umbrella header "LuaFramework.hpp"
+  export *
+
+  module * { export * }
+}
