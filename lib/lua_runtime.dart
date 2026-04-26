@@ -32,7 +32,10 @@ int luaPrint(Pointer<lua_State> L) {
   }
   malloc.free(namePtr); // free after use
 
-  LuaRuntime.lastPrintOutput = buffer.toString();
+  if (LuaRuntime.lastPrintOutput.isNotEmpty) {
+    LuaRuntime.lastPrintOutput += "\n";
+  }
+  LuaRuntime.lastPrintOutput += buffer.toString();
   return 0;
 }
 
