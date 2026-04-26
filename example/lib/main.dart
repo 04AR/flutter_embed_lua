@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_embed_lua/lua_bindings.dart';
 import 'package:flutter_embed_lua/lua_runtime.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:file_picker/file_picker.dart';
+import 'dart:io';
 
 void main() {
   // ensure Initialized
@@ -54,6 +56,21 @@ class _LuaReplAppState extends State<LuaReplApp> {
     controller.clear();
   }
 
+  Future<void> pickAndRunFile() async {
+    FilePickerResult? result = await FilePicker.platform.pickFiles(
+      type: FileType.custom,
+      allowedExtensions: ['lua'],
+    );
+
+    if (result != null && result.files.single.path != null) {
+      final path = result.files.single.path!;
+      final resultOutput = runtime.runFile(path);
+      setState(() {
+        output.add("> [File] ${result.files.single.name}\n$resultOutput");
+      });
+    }
+  }
+
   @override
   void dispose() {
     runtime.dispose();
@@ -91,6 +108,7 @@ class _LuaReplAppState extends State<LuaReplApp> {
                   ),
                 ),
                 IconButton(icon: Icon(Icons.send), onPressed: runCode),
+                IconButton(icon: Icon(Icons.file_open), onPressed: pickAndRunFile),
               ],
             ),
           ],
