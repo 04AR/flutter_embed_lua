@@ -42,7 +42,7 @@ class LuaRuntime {
   late final Pointer<lua_State> L;
 
   ffi.DynamicLibrary _openDynamicLibrary() {
-    if (Platform.isAndroid) {
+    if (Platform.isAndroid || Platform.isLinux) {
       return ffi.DynamicLibrary.open('liblua.so');
     } else if (Platform.isWindows) {
       return ffi.DynamicLibrary.open("lua54.dll");
